@@ -24,6 +24,11 @@
     --python: green;
     --diagramBorder: 1px solid black;
     --borderItem: black;
+/* - - - path image - - -  */
+    --mainImage: url(img/main.jpg);
+    --fb: url(img/f_logo.png);
+    --github: url(img/GitHub.png);
+    --linkedIn: url(img/LI-In-Bug.png);
 }
 
 body, html  {
@@ -35,8 +40,8 @@ body, html  {
 }
 
 .content{
-    height: 100%;
-    overflow: hidden;
+    height: 100%;   
+    /* overflow: hidden; */
 }
 
 h1, h2, h3, h4{
@@ -67,7 +72,7 @@ h3{
 }
 
 .mainImage{
-    background-image: url("/HTML/hometask/img/main.jpg");
+    background-image: var(--mainImage);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -132,6 +137,7 @@ nav{
     right: 0;
     width: 60%;
     position: fixed;
+    z-index: 1;
 }
 
 .navigationMenuItem{
@@ -159,6 +165,10 @@ nav{
 .navigationMenuItem:focus-within{
     background-color: var(--backgroundNavButtonColorActive);
     color: var(--textNavButtonColorActive);
+}
+
+.navigationMenu:target .navigationMenuItem {
+    background-color: aquamarine;
 }
 
 /* - - - ! ! ! ! ! ! - - - */
@@ -284,8 +294,7 @@ nav{
     height: 50%;
     border: var(--diagramBorder);
     border-radius: 50%;
-    background: conic-gradient( 
-     white 0deg 360deg);
+    background: conic-gradient(white 0deg 360deg);
      margin: 25%;
 }
 
@@ -307,6 +316,8 @@ ul{
     width: 60%;
     list-style: none;
     text-align: center;
+    padding: 0;
+    margin: 10% 20% 0 20%;
 }
 
 ul :first-child{
@@ -314,7 +325,7 @@ ul :first-child{
 }
 
 ul li{
-    padding: 5px;
+    padding: 10px;
 }
 
 /* - - - ! ! ! ! ! ! - - - */
@@ -367,11 +378,11 @@ ul li{
 }
 
 .one{
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 .two{
-    animation-delay: 6s;
+    animation-delay: 3s;
 }
 
 @keyframes animation{
@@ -492,15 +503,15 @@ input[type=submit]:active{
 }
 
 .facebook{
-    background-image: url("/HTML/hometask/img/f_logo.png");
+    background-image: var(--fb);
 }
 
 .github{
-    background-image: url("/HTML/hometask/img/GitHub.png");
+    background-image: var(--github);
 }
 
 .linkedin{
-    background-image: url("/HTML/hometask/img/LI-In-Bug.png");
+    background-image: var(--linkedIn);
 }
 
 /* - - - Animation - - - */
