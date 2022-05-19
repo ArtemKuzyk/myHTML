@@ -32,34 +32,25 @@
 }
 
 body, html  {
-    margin: 0;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
     color: var(--textColor);
     height: 100%;
+    margin: 0;
 }
 
-.content{
-    height: 100%;   
-    /* overflow: hidden; */
-}
-
-h1, h2, h3, h4{
+h1, h2, h3{
     color: var(--headTextColor);
 }
 
 h1{
-    font-size: 6vw;
+    font-size: 350%;
 }
 
 h2{
     text-align: center;
-    font-size: 5vw;
+    font-size: 300%;
     margin: 7% 0 5% 0;
-}
-
-h3{
-    font-size: 3vw;
 }
 
 /* - - - ! ! ! ! ! ! - - - */
@@ -68,13 +59,10 @@ h3{
 .header{
     height: 100%;
     position: relative;
-    z-index: 2;
 }
 
 .mainImage{
-    background-image: var(--mainImage);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: var(--mainImage) center no-repeat;
     background-size: cover;
     height: 100%;
 }
@@ -99,7 +87,7 @@ h3{
     --borderSetConf: 1px solid black;
     border: var(--borderSetConf);
     border-radius: 5px;
-    font-size: 3vw;
+    font-size: 150%;
     font-weight: bold;
     margin-top: 35px;
     padding: 2%;
@@ -118,19 +106,20 @@ h3{
 }
 
 .main{
-    /* height: 100%; */
-    position: relative;
-    
+    position: relative;  
 }
 
+/* - - - content - - - */
+.content{
+    height: 100%;   
+}
+main{
+    position: absolute;
+}
 /* - - - ! ! ! ! ! ! - - - */
 /* - - - NAVIGATION - - - */
 /* - - - ! ! ! ! ! ! - - - */
-.nav {
-    position: absolute;
-}
-
-.navigationMenu{
+nav{
     display: flex;
     top: 0;
     width: 60%;
@@ -166,7 +155,7 @@ h3{
     color: var(--textNavButtonColorActive);
 }
 
-.navigationMenu:target .navigationMenuItem {
+nav:target .navigationMenuItem {
     background-color: aquamarine;
 }
 
@@ -175,16 +164,12 @@ h3{
 /* - - - ! ! ! ! ! ! - - - */
 .standartPage{
     height: 100vh;
-    display: flex;
-    flex-direction: column;
     border-bottom: var(--borderSetConf);
     position: relative;
 }
 
 .information{
     margin-top: 2%;
-    display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
@@ -200,21 +185,15 @@ h3{
 }
 
 .textAboutMe{
-    display: flex;
-    flex-direction: column;
     max-width: 70%;
     align-items: center ;
 }
 
 .myInfo{    
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;     
 }
 
 .checkHead{
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: baseline;
 }
@@ -223,7 +202,7 @@ h3{
     border: var(--borderSetConf);
     border-radius: 50%;
     padding: 5px;
-    font-size: 3vw;     
+    font-size: 125%;     
 }
 
 .introduce{
@@ -240,8 +219,6 @@ h3{
 /* - - - Expirience - - - */
 /* - - - ! ! ! ! ! ! - - - */
 .diagramContainer{
-    display: flex;
-    flex-direction: column;
     min-width: 300px;
     min-height: 400px;
 }
@@ -336,26 +313,22 @@ ul li{
 }
 
 .interests{
-    display: flex;
-    flex-direction: column;
     margin-top: 25px;
 }
 
 .interest{
-    display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    margin: 20px;
+    margin: 10px 10%;
 }
 
 .photoInteres{
-    max-width: 350px;
+    width: 110%;
+    max-width: 570px;
+    max-height: 310px;
 }
 
 .textAboutInterest{
-    display: flex;
-    flex-direction: column;
-    max-width: 70%;
+    max-width: 60%;
     align-items: center ;
     justify-content: center;
 }
@@ -398,8 +371,6 @@ ul li{
 /* - - - Get in touch - - - */
 /* - - - ! ! ! ! ! ! - - - */
 .GetInTouch{
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }   
 
@@ -413,8 +384,6 @@ ul li{
     width: 60%;
     padding: 50px;
     align-items: center;
-    display: flex;
-    flex-direction: column;
 }
 
 .textBox{
@@ -422,8 +391,6 @@ ul li{
 }
 
 .inputLine{
-    display: flex;
-    flex-direction: row;
     width: 100%;
     justify-content: space-between;
     margin: 0;
@@ -466,7 +433,7 @@ input[type=submit]:active{
 /* - - - ! ! ! ! ! ! - - - */
 /* - - - footer - - - */
 /* - - - ! ! ! ! ! ! - - - */
-.footer{
+footer{
     height: 200px;
     margin-top: -200px;
     margin-bottom: 0;
@@ -475,9 +442,10 @@ input[type=submit]:active{
     border-top: var(--borderSetConf);
 }
 
-.footer .navigationMenu{   
+footer nav{ 
     position: absolute;
     left: 20%;
+    margin-left: 0;
 }
 
 .socialLinks{
@@ -530,4 +498,15 @@ input[type=submit]:active{
 @keyframes circle{
     0%{transform: rotate(0deg);}
     100%{transform: rotate(360deg);}
+}
+
+/* - - - flex - - - */
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
 }
